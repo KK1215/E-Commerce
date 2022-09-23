@@ -1,0 +1,37 @@
+.nav {
+    display: flex;
+    justify-content: center;
+  list-style: none;
+  }
+
+  .search-icon {
+    position: absolute;
+    z-index: 10;
+    right: 59%;
+    top: 20px;
+    color: blue;
+}
+.form-control {
+    border-radius: 3px;
+    width: 600px;
+    margin-right: 20px !important;
+    padding-right: 15.375rem;
+ 
+   
+}
+
+.search-icon{
+    position: absolute;
+  z-index: 2;
+  display: block;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
+  right: 0;
+  top: 0;
+  padding-right: 13.580rem;
+  padding-top: .95rem;
+}

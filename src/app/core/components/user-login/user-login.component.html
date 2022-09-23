@@ -1,0 +1,56 @@
+<div class="bg">
+<div class="container-fluid" >
+  
+
+
+    <div class="row">
+        <div class="col-md-6">
+          
+        </div>
+        <div class="col-md-4">
+
+         
+            <h3 class="text-success  text-center"><strong>Login Page</strong></h3>
+            <form action="" class="mt-4" (ngSubmit)="submit()"  [formGroup]="loginform" >
+                <h5 class="text-primary mb-3"></h5>
+                <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="username" placeholder="username" name="username" formControlName="usernameValue">
+                <div *ngIf="formControls['usernameValue'].touched && formControls['usernameValue'].invalid" class="alert alert-danger">Email required</div>
+             
+                <label for="floatingInput">Email address</label>
+               
+               
+              </div>
+              <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" formControlName="passwordValue">
+                <div *ngIf="formControls['passwordValue'].touched && formControls['passwordValue'].invalid" class="alert alert-danger">Must contain at least 5 characters</div>
+                <label for="floatingPassword">Password</label>
+              </div>
+              <div class="form-floating mb-3">
+                <select class="form-select" id="floatingSelect" aria-label="select user role" name="role" formControlName="isuserAdmin">
+                  <option *ngFor="let r of roles" [value]="r">{{ r }}</option>
+                </select>
+                <label for="floatingSelect">Select role</label>
+              </div>
+              <div class="btn-group-justified btn-group-sm">
+           
+                <button type="button" routerLink="/signup" class="btn btn-primary ">Need account</button>
+                <button type="submit" (click)="submit()" routerLink="admin/products"  [disabled]="loginform.invalid"  class="btn btn-primary margin-left" >Login</button>
+              </div>
+
+              
+             
+
+              
+
+              
+            </form>
+
+        </div>
+        
+
+</div>
+</div>
+
+
+

@@ -1,0 +1,59 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+
+        </div>
+        <div class="col-md-4">
+            <h3 class="text-success  text-center">Signup</h3>
+            <form  class="mt-4"  (ngSubmit)="onProductCreate(signupform.value)" [formGroup]="signupform" >
+                <h5 class="text-primary mb-3"></h5>
+                <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="username" required formControlName="username">
+                
+                <div *ngIf="formControls['username'].touched && formControls['username'].invalid" class="alert alert-danger">Enter your Email</div>
+                <label for="floatingInput">Email address</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput1" placeholder="username" required  formControlName="name">
+                <div *ngIf="formControls['name'].touched && formControls['name'].invalid" class="alert alert-danger"> Enter your name</div>
+                <label for="floatingInput">Full Name</label>
+              </div>
+
+
+
+
+              <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password"  minlength="5" required formControlName="password">
+                <div *ngIf="formControls['password'].touched && formControls['password'].invalid" class="alert alert-danger"> "Must contain at least 5 characters"</div>
+                <label for="floatingPassword">Password</label>
+
+              </div>
+              <div class=" form-floating mb-3 ">
+                <select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="role" [(ngModel)]="roles" formControlName="isuserAdmin">
+                  
+                  <option *ngFor="let r of roles" [value]="r">{{ r }}</option>
+                  <div *ngIf="formControls['isuserAdmin'].touched && formControls['isuserAdmin'].invalid" class="alert alert-danger">Enter your role </div>
+                  
+                </select>
+                <label for="floatingSelect">Select role</label>
+              </div>
+              
+              <div class="btn-group-justified btn-group-sm">
+           
+                <button type="button" routerLink="/" class="btn btn-primary ">Login here</button>
+                <button type="submit"  [disabled]="signupform.invalid"  class="btn btn-primary justify-content-md-end margin-left">Register</button>
+              </div>
+            </form>
+
+        </div>
+        <div class="col-md-2">
+
+        </div>
+
+    </div>
+
+</div>
+
+
+

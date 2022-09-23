@@ -1,0 +1,12 @@
+
+.margin-left{
+    margin-left: 250px !important;
+}
+
+    
+.bg{
+
+   
+   background: -webkit-linear-gradient(to left, #99f2c8, #1f4037);
+   background: linear-gradient(to left, #99f2c8, #1f4037);
+}
