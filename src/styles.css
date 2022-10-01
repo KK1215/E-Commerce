@@ -2,5 +2,9 @@
 @import '~bootstrap/dist/css/bootstrap.css';
 @import '~ngx-toastr/toastr.css';
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+     background-image:url('https://img.freepik.com/free-photo/black-monstera-leaves-background-wallpaper_53876-102420.jpg?w=2000');
+     background-position:center;
+      background-size:cover;
+    color: white;
+    }

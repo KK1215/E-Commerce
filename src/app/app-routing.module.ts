@@ -6,12 +6,13 @@ import { AdminProductsComponent } from './admin/components/admin-products/admin-
 import { UserLoginComponent } from './core/components/user-login/user-login.component';
 
 
-// import { ProductsComponent } from './shopping/components/cart/products.component';
+
 
 import { BsNavbarComponent } from './core/components/bs-navbar/bs-navbar.component';
 
 import { SignupComponent } from './core/components/signup/signup.component';
 import { AuthGuardGuard } from './shared/services/auth-guard.guard';
+import { ThankyouComponent } from './thankyou/thankyou.component';
 
 import { AdminAuthGuardGuard } from './shared/services/admin-auth-guard.guard';
 import { ProductFormComponent } from './admin/components/product-form/product-form.component';
@@ -23,21 +24,15 @@ const routes: Routes = [
  
 
   
- {path: '',component:UserLoginComponent,canActivate:[AuthGuardGuard]},
- {path:'shopping/check-out',component:CheckOutComponent,canActivate:[AuthGuardGuard]},
- {path:'bs-nav-bar',component:BsNavbarComponent,canActivate:[AuthGuardGuard]},
-
-
-
- {path: 'cart-list',component: CartListComponent,canActivate:[AuthGuardGuard]},
-
+ {path: '',component:UserLoginComponent},
+ {path:'check-out',component:CheckOutComponent},
+ {path:'bs-navbar',component:BsNavbarComponent,canActivate:[AuthGuardGuard]},
+{path: 'cart-list',component: CartListComponent,canActivate:[AuthGuardGuard]},
+{path: 'admin/products',component: AdminProductsComponent,canActivate:[AuthGuardGuard]},
+ {path:'admin/products/new',component: ProductFormComponent,canActivate:[AuthGuardGuard, AdminAuthGuardGuard]},
  
- 
- {path: 'admin/products',component: AdminProductsComponent,canActivate:[AuthGuardGuard]},
- {path:'admin/products/new',component: ProductFormComponent,canActivate:[AuthGuardGuard, AdminAuthGuardGuard]
-},
- 
- {path: 'signup',component:SignupComponent }
+ {path: 'signup',component:SignupComponent },
+ {path:'thankyou',component:ThankyouComponent},
  
 ];
 

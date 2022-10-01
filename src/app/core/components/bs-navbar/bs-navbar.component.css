@@ -3,19 +3,22 @@
     justify-content: center;
   list-style: none;
   }
+  .navbar{
+    color: re
+  }
 
   .search-icon {
     position: absolute;
     z-index: 10;
     right: 59%;
     top: 20px;
-    color: blue;
+    color: red;
 }
 .form-control {
     border-radius: 3px;
     width: 600px;
-    margin-right: 20px !important;
-    padding-right: 15.375rem;
+    /* margin-right: 10px !important; */
+    padding-right: 17.375rem;
  
    
 }
@@ -32,6 +35,7 @@
   color: #aaa;
   right: 0;
   top: 0;
-  padding-right: 13.580rem;
+  padding-right: 15rem;
   padding-top: .95rem;
 }
+

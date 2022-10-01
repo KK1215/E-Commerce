@@ -26,8 +26,10 @@
     "firebase-tools": "^11.8.0",
     "g": "^2.0.1",
     "ngx-toastr": "^15.0.0",
+    "ngx-useful-swiper": "^10.0.1",
     "node": "^16.17.0",
     "rxjs": "~7.5.0",
+    "swiper": "^6.8.4",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },

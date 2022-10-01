@@ -11,6 +11,7 @@ export class CartListComponent implements OnInit {
 @Input() 
 public productList: any = [];
 public grandTotal !: number;
+public filterCategory :any;
 quantity = 1;
 public cartItemList : any =[]
  
@@ -21,6 +22,7 @@ public cartItemList : any =[]
     this.cartService.getProducts()
     .subscribe(res=>{
       this.productList= res;
+      this.filterCategory = res;
         this.grandTotal = this.cartService.getTotalPrice();
 
       this.productList.forEach((a:any)=>{
@@ -29,6 +31,7 @@ public cartItemList : any =[]
         }
          Object.assign(a,{total:a.price*a.quantity})
       });
+     
     });
   }
 

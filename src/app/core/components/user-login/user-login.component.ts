@@ -56,8 +56,9 @@ loginform: FormGroup = new FormGroup(
       this.authService.login(usernameValue, passwordValue).subscribe((data) => {
       localStorage.setItem("role",isuserAdmin)
       localStorage.setItem('userData', JSON.stringify(data));
-      this.router.navigate(['/admin/products']);
+      this.router.navigate(['admin/products']);
       this.toastr.success('Login Successful!');
+      
     });
 }
 

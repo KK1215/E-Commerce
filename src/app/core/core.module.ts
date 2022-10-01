@@ -5,13 +5,13 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 import { CoreRoutingModule } from './core-routing.module';
-import { Router } from '@angular/router';
-
 import { UserLoginComponent } from './components/user-login/user-login.component';
-import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { SignupComponent } from './components/signup/signup.component';
-import { FirebaseApp } from '@angular/fire/app';
+
+import { SharedModule } from '../shared/shared.module';
+
 
 
 
@@ -35,7 +35,9 @@ import { FirebaseApp } from '@angular/fire/app';
     CoreRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+   
+    
     ]
 })
 export class CoreModule { }

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ShippingFormsComponent } from './shipping-forms.component';
+import { ScrollToTopComponent } from './scroll-to-top.component';
 
-describe('ShippingFormsComponent', () => {
-  let component: ShippingFormsComponent;
-  let fixture: ComponentFixture<ShippingFormsComponent>;
+describe('ScrollToTopComponent', () => {
+  let component: ScrollToTopComponent;
+  let fixture: ComponentFixture<ScrollToTopComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ShippingFormsComponent ]
+      declarations: [ ScrollToTopComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ShippingFormsComponent);
+    fixture = TestBed.createComponent(ScrollToTopComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

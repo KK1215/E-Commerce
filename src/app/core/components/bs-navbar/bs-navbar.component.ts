@@ -22,14 +22,7 @@ export class BsNavbarComponent implements OnInit {
   isLoggedIn$: Observable<boolean> | undefined;
   isUserAdmin = false;
   public searchTerm !: string;
- 
-
-  
-
-
   user: firebase.User | undefined;
-  
-
   isFetching: boolean = false;
   
  
@@ -47,15 +40,10 @@ export class BsNavbarComponent implements OnInit {
       this.isUserAdmin = localStorage.getItem('role')?.toString() === 'admin';
     
     }
-
-
     this.cartService.getProducts()
     .subscribe(res=>{
       this.totalItem = res.length;
     })
-
-    
-   
   }
   
 
@@ -73,8 +61,10 @@ export class BsNavbarComponent implements OnInit {
 
   search(event:any){
     this.searchTerm = (event.target as HTMLInputElement).value;
-    console.log(this.searchTerm);
     this.cartService.search.next(this.searchTerm);
+  }
+  notShow(){
+    return this.router.url.includes('/check-out');
   }
 }
 

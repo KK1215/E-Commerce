@@ -1,53 +1,87 @@
-<nav class="navbar navbar-expand-lg bg-primary">
-
+<nav class="navbar navbar-expand-lg bg-danger">
   <div class="container-fluid align-item-center d-flex">
+    <a class="navbar-brand fas fa-solid fa-book" routerLink="/">
+      <strong> BooKLY</strong>
+    </a>
 
-    <a class="navbar-brand" routerLink="/"> <strong>🚛 NKapp</strong> </a>
-
-    <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
+    </button>
 
-    </button> -->
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
+    <div
+      class="collapse navbar-collapse fas fa-solid fa-user-check"
+      id="navbarSupportedContent"
+    >
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item dropdown">
-
-          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false"
-
-            *ngIf="displayName$ |async as displayName"><strong>👥 {{displayName}}</strong>
-
+          <a
+            class="nav-link dropdown-toggle"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            *ngIf="displayName$ | async as displayName"
+            ><strong>{{ displayName }}</strong>
           </a>
-          
-  
-      <ul class="dropdown-menu ">
-          <li><a class="dropdown-item" routerLink="shopping/my-order">My Orders</a></li>
-          <li><a class="dropdown-item" routerLink="admin/orders">Manage Order</a></li> 
-          <li><a class="dropdown-item" routerLink="admin/products">Manage Products</a></li>
-      </ul>
-    
- </li>
- </ul>
- <div class="form-group"  *ngIf="displayName$|async as displayName">
-  <span class="fas fa-search search-icon"></span>
-  <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="search products">
- 
-</div>
- 
- 
- <div *ngIf="!isUserAdmin">
-  <button routerLink="cart-list" class="btn btn-primary" >
-    <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
-    <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
-  </button>
-  </div>
-  <a class="navbar-brand" (click)="logout()" *ngIf="displayName$|async as displayName"><strong>Log Out</strong></a>
-  </div>
-  </div>
- 
-</nav>
 
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" routerLink="shopping/my-order"
+                >My Orders</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="admin/orders"
+                >Manage Order</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="admin/products"
+                >Manage Products</a
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <div class="form-group mx-3" *ngIf="!notShow() ">
+     
+        <input *ngIf="displayName$ | async as displayName"
+          type="text"
+          class="form-control"
+          [(ngModel)]="searchTerm"
+          (keyup)="search($event)"
+          placeholder="search products"
+        />
+      </div>
+
+      <div *ngIf="!isUserAdmin" class="px-2">
+        <button
+          routerLink="cart-list"
+          class="btn btn-danger"
+          *ngIf="displayName$ | async as displayName"
+        >
+          <i style="font-size: 30px" class="fas fa-cart-plus"></i>
+          <div style="font-size: 10px" class="badge bg-danger">
+            {{ totalItem }}
+          </div>
+        </button>
+      </div>
+
+      <div>
+        <a
+          class="navbar-brand"
+          (click)="logout()"
+          *ngIf="displayName$ | async as displayName"
+          ><strong>Log Out</strong></a
+        >
+      </div>
+    </div>
+  </div>
+</nav>

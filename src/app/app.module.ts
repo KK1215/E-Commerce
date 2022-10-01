@@ -13,7 +13,7 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
  import { BsNavbarComponent } from './core/components/bs-navbar/bs-navbar.component';
 
 
-// import { ProductsComponent } from './shopping/components/cart/products.component';
+
 
 
 
@@ -37,6 +37,9 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppMaterialModule } from './app-material/app-material.module';
 import { FilterPipe } from './shared/filter.pipe';
+import { CheckOutComponent } from './shopping/components/check-out/check-out.component';
+import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
+import { ThankyouComponent } from './thankyou/thankyou.component';
 
 
 
@@ -46,12 +49,16 @@ import { FilterPipe } from './shared/filter.pipe';
     AppComponent,
     // ProductsComponent,
 
-   
+  
    
     BsNavbarComponent,
     ProductFormComponent,
     AdminProductsComponent,
-    CartListComponent
+    CartListComponent,
+    FilterPipe,
+    CheckOutComponent,
+    ScrollToTopComponent,
+    ThankyouComponent
     
   ],
   imports: [
@@ -71,7 +78,8 @@ import { FilterPipe } from './shared/filter.pipe';
     SharedModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
-    AppMaterialModule
+    AppMaterialModule,
+   
     
     
   ],
@@ -84,6 +92,7 @@ import { FilterPipe } from './shared/filter.pipe';
 
    
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  
 })
 export class AppModule { }

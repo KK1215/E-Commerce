@@ -47,4 +47,10 @@ export class ProductsService {
   deletAllProducts(): Observable<any[]> {
     return this.http.delete<any>('https://nkapp-61e84-default-rtdb.firebaseio.com/products.json')
   }
+  updateProduct(id:string,value:Products){
+    this.http.put('https://nkapp-61e84-default-rtdb.firebaseio.com/products/'+id+ '.json',value)
+    .subscribe();
+  }
+  
+  
 }

@@ -1,9 +1,11 @@
 .item img{
-    width: 64px;
+    width: 70px;
+    padding-top: 10px;
 }
 .item{
     margin: 0px 15px;
     text-align: center;
+    color:white;
 }
 .item a:hover{
     color: blue;
@@ -27,6 +29,28 @@
 }
 .margin-left{
     margin-left: 50px !important;
+    
+}
+.fantasy{
+    height: 60px;
+color: white;
+}
+
+.btnScrollTop{
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    /* color: aliceblue; */
+}
+.btnScrollTop:active{
+   background: #cc2333; 
 }
 
 
